@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.lxd.learn.bootm.mapper.TrPackageBatchMapper">
+  <resultMap id="BaseResultMap" type="org.lxd.learn.bootm.entity.TrPackageBatch">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="REL_ID" jdbcType="INTEGER" property="relId" />
+    <result column="PACKAGE_ID" jdbcType="INTEGER" property="packageId" />
+    <result column="BATCH_ID" jdbcType="INTEGER" property="batchId" />
+    <result column="GRANT_COUNT" jdbcType="INTEGER" property="grantCount" />
+  </resultMap>
+</mapper>
