@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<properties resource="application.properties"/>
+	
+	<context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+		<property name="beginningDelimiter" value="`"/>
+		<property name="endingDelimiter" value="`"/>
+		
+		<plugin type="${mapper.plugin}">
+		  <property name="mappers" value="${mapper.mappers}"/>
+		</plugin>
+		
+		<!-- source 1 -->
+		<jdbcConnection driverClass="${spring.datasource.test1.driverClassName}"
+		                connectionURL="${spring.datasource.test1.url}"
+		                userId="${spring.datasource.test1.username}"
+		                password="${spring.datasource.test1.password}">
+		</jdbcConnection>
+		
+		
+		
+		
+		<javaModelGenerator targetPackage="${targetModelPackage1}" targetProject="${targetJavaProject}"/>
+		
+		<sqlMapGenerator targetPackage="${targetXMLPackage1}"  targetProject="${targetResourcesProject}"/>
+		
+		<javaClientGenerator targetPackage="${targetMapperPackage1}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
+		
+		<table tableName="t_dep" >
+		  <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		
+		
+		<!-- source 2 
+		<jdbcConnection driverClass="${spring.datasource.test2.driverClassName}"
+		                connectionURL="${spring.datasource.test2.url}"
+		                userId="${spring.datasource.test2.username}"
+		                password="${spring.datasource.test2.password}">
+		</jdbcConnection>
+		
+		<javaModelGenerator targetPackage="${targetModelPackage2}" targetProject="${targetJavaProject}"/>
+		
+		<sqlMapGenerator targetPackage="${targetXMLPackage2}"  targetProject="${targetResourcesProject}"/>
+		
+		<javaClientGenerator targetPackage="${targetMapperPackage2}" targetProject="${targetJavaProject}" type="XMLMAPPER" />
+		
+		<table tableName="t_user" >
+		  <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+		</table>
+		-->
+		
+	</context>
+</generatorConfiguration>
