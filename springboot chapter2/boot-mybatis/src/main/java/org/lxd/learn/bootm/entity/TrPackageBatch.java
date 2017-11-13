@@ -73,4 +73,12 @@ public class TrPackageBatch {
     public void setGrantCount(Integer grantCount) {
         this.grantCount = grantCount;
     }
+
+	@Override
+	public String toString() {
+		return "TrPackageBatch [relId=" + relId + ", packageId=" + packageId + ", batchId=" + batchId + ", grantCount="
+				+ grantCount + "]";
+	}
+    
+    
 }
